@@ -9,8 +9,9 @@
   YAT_HOME = /usr/include/yat
   YAT4TANGO_HOME = /usr/include/yat4tango
   DS_HOME = .
+  SOURCEDIR = ./src
  
-  INCLUDE_DIRS = -I $(TANGO_HOME) -I $(DS_HOME)	-I $(LINLIB_HOME) -I $(YAT_HOME) -I $(YAT4TANGO_HOME)
+  INCLUDE_DIRS = -I $(TANGO_HOME) -I $(DS_HOME)	-I $(LINLIB_HOME) -I $(YAT_HOME) -I $(YAT4TANGO_HOME) -I $(SOURCEDIR)
  
  
   LIB_DIRS = -L /usr/lib64 -L ./src/lib 
@@ -48,7 +49,7 @@
 
   all: EnsembleDS
  
-  EnsembleDS: ./src/$(SVC_OBJS)
+  EnsembleDS: $(addprefix ./src/,$(SVC_OBJS))
 	cd ./src/lib && $(MAKE) libensemble.a
 	$(CC) $(SVC_OBJS) -o $(BIN_DIR)/EnsembleDS $(LFLAGS)
  
