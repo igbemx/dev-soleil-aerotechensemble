@@ -10,10 +10,10 @@
   YAT4TANGO_HOME = /usr/include/yat4tango
   DS_HOME = .
  
-  INCLUDE_DIRS = -I $(TANGO_HOME) -I $(DS_HOME)	-I $(LINLIB_HOME) -I $(YAT_HOME) -I $(YAT4TANGO_HOME) #/include/$(BIN_DIR) -I .
+  INCLUDE_DIRS = -I $(TANGO_HOME) -I $(DS_HOME)	-I $(LINLIB_HOME) -I $(YAT_HOME) -I $(YAT4TANGO_HOME)
  
  
-  LIB_DIRS = -L /usr/lib64 -L ./lib 
+  LIB_DIRS = -L /usr/lib64 -L ./src/lib 
  
  
   CXXFLAGS = -D_REENTRANT -std=c++0x $(INCLUDE_DIRS)
@@ -41,9 +41,6 @@
              AerotechBoxClass.o \
              AerotechBox.o \
              AerotechBoxStateMachine.o
-             #A3200ExpertStateMachine.o \
-             #A3200ExpertClass.o \
-             #A3200Expert.o
  
   .SUFFIXES: .o .cpp
   .cpp.o:
@@ -51,10 +48,10 @@
 
   all: EnsembleDS
  
-  EnsembleDS: $(SVC_OBJS)
-	cd ./lib && $(MAKE) libensemble.a
+  EnsembleDS: ./src/$(SVC_OBJS)
+	cd ./src/lib && $(MAKE) libensemble.a
 	$(CC) $(SVC_OBJS) -o $(BIN_DIR)/EnsembleDS $(LFLAGS)
  
   clean:
 	rm -f EnsembleDS *.so *.a *.o core
-	cd ./lib && $(MAKE) clean
+	cd ./src/lib && $(MAKE) clean

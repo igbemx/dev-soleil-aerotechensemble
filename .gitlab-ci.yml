@@ -1,0 +1,12 @@
+include:
+    - project: 'kits-maxiv/cfg-maxiv-gitlabci'
+      file: '/.cpp-ci.yml'
+  
+build el6 x86_64:
+  variables:
+    UNSUPPORTED: 'True'
+
+build el6 i386:
+  variables:
+    UNSUPPORTED: 'True'  
+
