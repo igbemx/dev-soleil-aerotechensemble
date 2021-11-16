@@ -1,6 +1,6 @@
 Summary: 	Tango Device for Aerotech Ensemble
 Name:    	tangods-aerotechensemble
-Version: 	1.0.0
+Version: 	1.0.1
 Release:	1%{?dist}.maxlab
 License:	GPL
 URL:		https://gitlab.maxiv.lu.se/kits-maxiv/dev-soleil-aerotechensemble
