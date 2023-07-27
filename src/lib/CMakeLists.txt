@@ -5,6 +5,11 @@ project(Ensemblelib LANGUAGES CXX)
 include(FindPkgConfig)
 
 pkg_search_module(TANGO_PKG REQUIRED tango)
+pkg_check_modules(YAT yat>=1.13.9 REQUIRED)
+pkg_check_modules(YAT4TANGO yat4tango>=1.10.12 REQUIRED)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_STANDARD_REQUIRED YES)
 
 # Create library
 set(SOURCES_LIST cEnsemble.cpp
@@ -19,7 +24,8 @@ set(HEADER_LIST cEnsemble.h
 add_library(Ensemblelib SHARED ${SOURCES_LIST} ${HEADER_LIST})
 target_include_directories(Ensemblelib PUBLIC 
     ${CMAKE_CURRENT_SOURCE_DIR}
-    ${TANGO_PKG_INCLUDE_DIRS})
+    ${TANGO_PKG_INCLUDE_DIRS}
+    ${YAT_INCLUDE_DIRS}/yat)
     
 # install
 include(GNUInstallDirs)

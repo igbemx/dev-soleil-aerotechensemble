@@ -9,6 +9,11 @@ project(AerotechEnsembleDS VERSION ${VERSION_STRING} LANGUAGES CXX)
 
 include(FindPkgConfig)
 pkg_search_module(TANGO_PKG REQUIRED tango)
+pkg_check_modules(YAT yat>=1.13.9 REQUIRED)
+pkg_check_modules(YAT4TANGO yat4tango>=1.10.12 REQUIRED)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_STANDARD_REQUIRED YES)
 
 set(EnsembleDS_HOME "./src")
 set(EnsembleDS_SOURCES ${EnsembleDS_HOME}/EnsembleExpert.cpp
@@ -33,14 +38,18 @@ add_executable(${PROJECT_NAME}
     ${EnsembleDS_SOURCES}
     ${SOURCES})
 
-link_directories(${TANGO_PKG_LIBRARY_DIRS})
+link_directories(${TANGO_PKG_LIBRARY_DIRS} ${YAT_LIBRARY_DIRS} ${YAT4TANGO_LIBRARY_DIRS})
 
 target_include_directories(${PROJECT_NAME} PUBLIC
     ${EnsembleDS_HOME}
-    ${TANGO_PKG_INCLUDE_DIRS})
+    ${TANGO_PKG_INCLUDE_DIRS}
+    ${YAT_INCLUDE_DIRS}/yat
+    ${YAT4TANGO_INCLUDE_DIRS})
     
 target_link_libraries(${PROJECT_NAME} PUBLIC
     ${TANGO_PKG_LIBRARIES}
+    yat4tango
+    yat
     Ensemblelib)
 
 # install

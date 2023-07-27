@@ -16,12 +16,10 @@ requirements:
     - cmake
     - make
     - {{ compiler('cxx') }}
-    - libtool
     - pkg-config
   host:
     - cppzmq
     - cpptango <9.4
-    - omniorb
     - omniorb-libs
     - yat
     - yat4tango
