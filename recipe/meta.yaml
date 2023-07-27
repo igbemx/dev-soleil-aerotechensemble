@@ -10,6 +10,9 @@ source:
 
 build:
   number: 0
+  # Some headers from yat4tango are used but the library isn't
+  ignore_run_exports:
+    - yat4tango
 
 requirements:
   build:
