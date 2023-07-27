@@ -24,10 +24,7 @@ set(EnsembleDS_SOURCES ${EnsembleDS_HOME}/EnsembleExpert.cpp
     ${EnsembleDS_HOME}/AerotechAxisStateMachine.cpp
     ${EnsembleDS_HOME}/AerotechBox.cpp
     ${EnsembleDS_HOME}/AerotechBoxClass.cpp
-    ${EnsembleDS_HOME}/AerotechBoxStateMachine.cpp
-    ${EnsembleDS_HOME}/A3200Expert.cpp
-    ${EnsembleDS_HOME}/A3200ExpertClass.cpp
-    ${EnsembleDS_HOME}/A3200ExpertStateMachine.cpp)
+    ${EnsembleDS_HOME}/AerotechBoxStateMachine.cpp)
 
 add_subdirectory("${EnsembleDS_HOME}/lib")
 
