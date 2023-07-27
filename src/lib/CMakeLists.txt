@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.15)
 
-project(Ensemblelib LANGUAGES CXX)
+project(ensemble LANGUAGES CXX)
 
 include(FindPkgConfig)
 
@@ -21,12 +21,12 @@ set(HEADER_LIST cEnsemble.h
     AbstractAerotech.h
     cA3200.h)
 
-add_library(Ensemblelib SHARED ${SOURCES_LIST} ${HEADER_LIST})
-target_include_directories(Ensemblelib PUBLIC 
+add_library(ensemble SHARED ${SOURCES_LIST} ${HEADER_LIST})
+target_include_directories(ensemble PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${TANGO_PKG_INCLUDE_DIRS}
     ${YAT_INCLUDE_DIRS}/yat)
-    
+
 # install
 include(GNUInstallDirs)
 
@@ -36,6 +36,6 @@ install(
     )
 
 install(TARGETS
-    Ensemblelib
+    ensemble
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )

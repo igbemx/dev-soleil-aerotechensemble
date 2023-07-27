@@ -50,7 +50,7 @@ target_link_libraries(${PROJECT_NAME} PUBLIC
     ${TANGO_PKG_LIBRARIES}
     yat4tango
     yat
-    Ensemblelib)
+    ensemble)
 
 # install
 include(GNUInstallDirs)
