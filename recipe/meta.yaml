@@ -1,0 +1,36 @@
+{% set name = "tangods-MMC100MicosAxis" %}
+{% set version = "1.6.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  path: ..
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - cmake
+    - make
+    - {{ compiler('cxx') }}
+    - libtool
+    - pkg-config
+  host:
+    - cppzmq
+    - cpptango <9.4
+    - omniorb
+    - omniorb-libs
+
+test:
+  commands:
+    - MMC100MicosAxis --help 2>&1 | grep usage
+    - MMC100MicosCtrl --help 2>&1 | grep usage
+
+about:
+  home: https://gitlab.maxiv.lu.se/kits-maxiv/dev-desy-mmc100micosaxis
+  license: GPL-3.0-or-later
+  license_file: LICENSE
+  summary: MMC100MicosAxis Tango Device
