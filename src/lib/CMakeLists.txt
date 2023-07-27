@@ -25,7 +25,7 @@ add_library(ensemble SHARED ${SOURCES_LIST} ${HEADER_LIST})
 target_include_directories(ensemble PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}
     ${TANGO_PKG_INCLUDE_DIRS}
-    ${YAT_INCLUDE_DIRS}/yat)
+    ${YAT_INCLUDE_DIRS})
 
 # install
 include(GNUInstallDirs)

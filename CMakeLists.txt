@@ -44,7 +44,7 @@ link_directories(${TANGO_PKG_LIBRARY_DIRS} ${YAT_LIBRARY_DIRS} ${YAT4TANGO_LIBRA
 target_include_directories(${PROJECT_NAME} PUBLIC
     ${EnsembleDS_HOME}
     ${TANGO_PKG_INCLUDE_DIRS}
-    ${YAT_INCLUDE_DIRS}/yat
+    ${YAT_INCLUDE_DIRS}
     ${YAT4TANGO_INCLUDE_DIRS})
     
 target_link_libraries(${PROJECT_NAME} PUBLIC
