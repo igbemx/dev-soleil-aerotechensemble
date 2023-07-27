@@ -23,6 +23,8 @@ requirements:
     - cpptango <9.4
     - omniorb
     - omniorb-libs
+    - yat
+    - yat4tango
 
 test:
   commands:

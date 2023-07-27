@@ -8,7 +8,6 @@ set(VERSION_STRING "${MAJOR_VERSION}.${MINOR_VERSION}.${PATCH_NUMBER}")
 project(AerotechEnsembleDS VERSION ${VERSION_STRING} LANGUAGES CXX)
 
 include(FindPkgConfig)
-include(GNUInstallDirs)
 pkg_search_module(TANGO_PKG REQUIRED tango)
 
 set(EnsembleDS_HOME "./src")
@@ -43,6 +42,9 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 target_link_libraries(${PROJECT_NAME} PUBLIC
     ${TANGO_PKG_LIBRARIES}
     Ensemblelib)
+
+# install
+include(GNUInstallDirs)
 
 install(TARGETS
     ${PROJECT_NAME}
