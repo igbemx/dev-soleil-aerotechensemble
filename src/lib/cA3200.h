@@ -8,7 +8,7 @@
 #define __C_A3200_H__
 
 #include "AbstractAerotech.h"
-#include <Exception.h>
+#include <yat/Exception.h>
 #include <iostream>
 
 
