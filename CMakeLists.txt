@@ -35,6 +35,10 @@ add_executable(${PROJECT_NAME}
     ${EnsembleDS_SOURCES}
     ${SOURCES})
 
+set_target_properties(${PROJECT_NAME}
+    PROPERTIES
+    OUTPUT_NAME EnsembleDS)
+
 link_directories(${TANGO_PKG_LIBRARY_DIRS} ${YAT_LIBRARY_DIRS} ${YAT4TANGO_LIBRARY_DIRS})
 
 target_include_directories(${PROJECT_NAME} PUBLIC

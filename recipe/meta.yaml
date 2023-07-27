@@ -26,7 +26,7 @@ requirements:
 
 test:
   commands:
-    - AerotechEnsembleDS --help 2>&1 | grep usage
+    - EnsembleDS --help 2>&1 | grep usage
 
 about:
   home: https://gitlab.maxiv.lu.se/kits-maxiv/dev-soleil-aerotechensemble
