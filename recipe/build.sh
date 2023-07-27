@@ -1,4 +1,3 @@
-export CXXFLAGS="$CXXFLAGS -std=c++0x"
 # ensure  "-fvisibility-inlines-hidden" option is not set
 # so that any "inline" functions are included in the shared library
 echo old CXXFLAGS: $CXXFLAGS
