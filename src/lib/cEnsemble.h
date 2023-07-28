@@ -8,7 +8,7 @@
 
 #include "AbstractAerotech.h"
 #include <iostream>
-#include <Exception.h>
+#include <yat/Exception.h>
 
 
 namespace Aerotech_ns

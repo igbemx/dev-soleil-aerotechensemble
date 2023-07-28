@@ -7,8 +7,8 @@
 #define __ABSTRACT_AEROTECH_H__
 
 #include <string>
-#include <time/Timer.h>
-#include <threading/Mutex.h>
+#include <yat/time/Timer.h>
+#include <yat/threading/Mutex.h>
 
 namespace Aerotech_ns
 {

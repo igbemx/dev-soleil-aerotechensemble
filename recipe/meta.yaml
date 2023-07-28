@@ -1,0 +1,38 @@
+{% set name = "tangods-aerotechensemble" %}
+{% set version = "1.0.1" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  path: ..
+
+build:
+  number: 0
+  # Some headers from yat4tango are used but the library isn't
+  ignore_run_exports:
+    - yat4tango
+
+requirements:
+  build:
+    - cmake
+    - make
+    - {{ compiler('cxx') }}
+    - pkg-config
+  host:
+    - cppzmq
+    - cpptango <9.4
+    - omniorb-libs
+    - yat
+    - yat4tango
+
+test:
+  commands:
+    - EnsembleDS --help 2>&1 | grep usage
+
+about:
+  home: https://gitlab.maxiv.lu.se/kits-maxiv/dev-soleil-aerotechensemble
+  license: GPL-3.0-or-later
+  license_file: LICENSE
+  summary: Tango Device for Aerotech Ensemble
